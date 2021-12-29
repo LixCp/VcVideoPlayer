@@ -3,7 +3,9 @@ import os
 from os import getenv
 from dotenv import load_dotenv
 
-load_dotenv()
+if os.path.exists(".env"):
+    load_dotenv(".env")
+    
 admins = {}
 ADMIN = int(os.getenv('ADMIN',1956381927))
 CHANNEL = int(os.getenv('CHANNEL',12345))
